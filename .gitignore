@@ -9,9 +9,15 @@ logs
 **/*.backup.*
 **/*.back.*
 
+*.sqlite
 node_modules
 bower_components
 ecoleta
+server/node_modules/*
+server/src/uploads/*
+!server/src/uploads/.gitkeep
+web/node_modules/*
+
 
 *.sublime*
 

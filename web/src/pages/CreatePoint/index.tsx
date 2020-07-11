@@ -8,6 +8,7 @@ import axios from 'axios';
 import './style.css';
 import logo from '../../assets/logo.svg';
 import api from '../../services/api';
+import Dropzone from '../../components/Dropzone';
 
 
 interface Item{
@@ -30,6 +31,7 @@ const CreatePoint = () => {
     const [ items, setItems] = useState<Item[]>([]);
     const [ uf, setUFs] = useState<string[]>([]);
     const [ cities, setCities] = useState<string[]>([]);
+    const [ selectedFile, setSelectedFile] = useState<File>();
 
     const [ selectedUF, setSelectedUF] = useState('0');
     const [ selectedCity, setSelectedCity] = useState('0');
@@ -110,16 +112,20 @@ async function handleSubmit(event: FormEvent){
     const [latitude, longitude] = selectedPosition;
     const items = selectedItems;
 
-    const data = {
-        name,
-        email,
-        whatsapp,
-        uf,
-        city,
-        latitude,
-        longitude,
-        items
-    };
+    const data = new FormData();
+    
+    data.append('name', name);
+    data.append('email', email);
+    data.append('whatsapp', whatsapp);
+    data.append('uf', uf);
+    data.append('city', city);
+    data.append('latitude', String(latitude));
+    data.append('longitude', String(longitude));
+    data.append('items', items.join(','));
+    
+    if(selectedFile){
+        data.append('image', selectedFile);
+    }
     
     await api.post('points', data);
     alert('Ponto cadastrado com sucesso!');
@@ -136,6 +142,8 @@ async function handleSubmit(event: FormEvent){
 
             <form onSubmit={handleSubmit}>
                 <h1>Cadastro do<br /> ponto de coleta</h1>
+
+                <Dropzone onFileUploaded={setSelectedFile} />
 
                 <fieldset>
                     <legend>
