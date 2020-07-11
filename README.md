@@ -26,6 +26,8 @@ A NLW é uma semana prática com muito código, desafios, redes e um único obje
 O <strong>Ecoleta</strong> é uma aplicação Web e Mobile para ajudar pessoas a encontrarem pontos de coleta para reciclagem.
 
 
+<a id="tecnologias-utilizadas"></a>
+
 ## :rocket: Tecnologias Utilizadas
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
@@ -35,7 +37,8 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [ReactJS](https://reactjs.org/)
 - [React Native](https://reactnative.dev/)
 
-<a id="tecnologias-utilizadas"></a>
+
+<a id="layout"></a>
 
 ## 🔖 Layout
 
@@ -45,13 +48,12 @@ Você pode visualizar o layout do projeto no formato através [desse link](https
     <img alt="Made by Rocketseat" src="https://user-images.githubusercontent.com/19232691/87231791-7e4e7780-c390-11ea-9270-c2ab149b0368.png">
 </p>
 
-<a id="layout"></a>
+<a id="quem-ministrou"></a>
 
 ## :mortar_board: Quem ministrou?
 
 Essa aplicação foi construída na trilha <strong>Booster</strong> da <strong>Next Level Week</strong> distribuída pela [Rocketseat](https://rocketseat.com.br/). 
 
-<a id="quem-ministrou"></a>
 
 ## :memo: License
 
